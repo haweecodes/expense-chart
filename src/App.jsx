@@ -2,8 +2,8 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Expenses</h1>
+    <div>
+      <h1>Expense Chart</h1>
       <section></section>
       <footer></footer>
     </div>
