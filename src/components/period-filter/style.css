@@ -1,0 +1,21 @@
+.filter-wrapper {
+    display: inline-flex;
+    gap: 12px;
+}
+
+.filter {
+    background-color: #F5F6FA;
+    border-radius: 30px;
+    padding: 12px 32px;
+}
+
+.filter p {
+    padding: 8px 10px;
+    cursor: pointer;
+}
+
+.filter .active {
+    background-color: #ffffff;
+    color: #003EFF;
+    border-radius: 16px;
+}
