@@ -1,6 +1,7 @@
 .filter-wrapper {
     display: inline-flex;
     gap: 12px;
+    margin-bottom: 25px;
 }
 
 .filter {
