@@ -7,7 +7,7 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    gap: 3.5px;
+    gap: 13px;
 }
 
 .legend-items .color-box {
@@ -19,6 +19,8 @@
 .legend-items p {
     color: #938FA3;
     text-transform: capitalize;
+    margin: 0;
+    font-size: 16px;
 }
 
 

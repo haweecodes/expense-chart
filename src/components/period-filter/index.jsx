@@ -17,7 +17,6 @@ const Filter = ({ filter, currentFilterState }) => {
       {filter.map((value) => (
         <p
           key={value}
-          style={{ margin: 0 }}
           className={value === activeState ? "active" : ""}
           onClick={() => handleFilter(value)}
         >

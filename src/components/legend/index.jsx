@@ -16,7 +16,7 @@ const Legend = ({data, filterState}) => {
       {Object.keys(timePeriod)
         .filter((key) => key !== "period")
         .map((value, index) => {
-          return <div className="legend-items">
+          return <div className="legend-items" key={value}>
             <div className="color-box" style={{backgroundColor: getColors(index)}}></div>
             <p>{value}</p>
           </div>;
