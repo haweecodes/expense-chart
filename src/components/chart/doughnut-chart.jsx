@@ -31,7 +31,7 @@ const DoughnutChart = ({ data, filterState }) => {
       const timePeriod = data.find((item) => item.period === filterState);
 
       if (!timePeriod) {
-        console.error('Data for "ALL TIME" period not found.');
+        console.error(`Data for ${timePeriod} period not found.`);
         return;
       }
 
