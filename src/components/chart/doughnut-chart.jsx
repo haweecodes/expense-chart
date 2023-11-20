@@ -54,14 +54,10 @@ const DoughnutChart = ({ data, filterState }) => {
   }, [data, filterState]);
 
   return (
-    <div className="donut-chart-block block">
-      <div className="donut-chart-block block">
-        <div className="donut-chart" id="donutChart">
-          <div className="center">
-            <span id="number"></span>
-            <span id="decimal"></span>
-          </div>
-        </div>
+    <div id="donutChart">
+      <div className="center">
+        <span id="number"></span>
+        <span id="decimal"></span>
       </div>
     </div>
   );

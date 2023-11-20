@@ -1,11 +1,11 @@
-.donut-chart {
+#donutChart {
   position: relative;
   width: 200px;
   height: 200px;
   margin: 0 auto 2rem;
   border-radius: 100%;
 }
-div.center {
+.center {
   background: #ffffff;
   position: absolute;
   text-align: center;
@@ -20,24 +20,6 @@ div.center {
   border-radius: 50%;
   line-height: 35px;
   padding: 30% 0 0;
-}
-
-.portion-block {
-  border-radius: 50%;
-  clip-path: polygon(100px 0px, 200px 0px, 200px 200px, 100px 200px);
-  height: 100%;
-  position: absolute;
-  width: 100%;
-}
-
-.circle {
-  border-radius: 50%;
-  clip-path: polygon(100px 0px, 200px 0px, 200px 200px, 100px 200px);
-  height: 100%;
-  position: absolute;
-  width: 100%;
-  font-family: monospace;
-  font-size: 1.5rem;
 }
 
 #number {
