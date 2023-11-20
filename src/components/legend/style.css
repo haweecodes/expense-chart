@@ -1,0 +1,22 @@
+.legend-wrapper {
+    display: inline-flex;
+    gap: 22px;
+}
+
+.legend-items {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3.5px;
+}
+
+.legend-items .color-box {
+    height: 13px;
+    width: 37px;
+    border-radius: 33px;
+}
+
+.legend-items p {
+    color: #938FA3;
+    text-transform: capitalize;
+}
