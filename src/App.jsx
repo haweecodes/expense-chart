@@ -3,7 +3,7 @@ import './App.css';
 const data = [
   {
     "period": "1M",
-    "personal": 150,
+    "personal": 150.23,
     "shopping": 90,
     "phone": 60,
     "other": 80

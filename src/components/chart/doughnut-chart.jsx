@@ -27,7 +27,6 @@ const DoughnutChart = ({ data, filterState }) => {
   useEffect(() => {
     if (data) {
       const container = document.getElementById("donutChart");
-      container.replaceChildren();
 
       const timePeriod = data.find((item) => item.period === filterState);
 
@@ -39,20 +38,30 @@ const DoughnutChart = ({ data, filterState }) => {
       const numericValues = Object.values(timePeriod).filter(
         (value) => typeof value === "number"
       );
-      const totalCount = numericValues.reduce((acc, value) => acc + value, 0);
+
+      const splitCount = String(
+        numericValues.reduce((acc, value) => acc + value, 0.0)
+      ).split(".");
+      const decimalCount = splitCount[1] || "00";
+      const totalCount = splitCount[0];
       container.style.background = generateConicGradient(timePeriod);
 
-      const centerDiv = document.createElement("div");
-      centerDiv.classList.add("center");
-      centerDiv.innerHTML = `$ ${totalCount.toFixed(2)}`;
-      container.appendChild(centerDiv);
+      const numberDiv = document.getElementById("number");
+      const decimalDiv = document.getElementById("decimal");
+      numberDiv.innerHTML = `$ ${totalCount}`;
+      decimalDiv.innerHTML = `.${decimalCount}`;
     }
   }, [data, filterState]);
 
   return (
     <div className="donut-chart-block block">
       <div className="donut-chart-block block">
-        <div className="donut-chart" id="donutChart"></div>
+        <div className="donut-chart" id="donutChart">
+          <div className="center">
+            <span id="number"></span>
+            <span id="decimal"></span>
+          </div>
+        </div>
       </div>
     </div>
   );
