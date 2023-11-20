@@ -1,46 +1,15 @@
 import React, { useState, useEffect } from "react";
+import { getColors } from "../../utils";
 import "./style.css";
 
-const data = [
-  {
-    period: "1M",
-    personal: 150,
-    shopping: 90,
-    phone: 60,
-    other: 80,
-  },
-  {
-    period: "6M",
-    personal: 320,
-    shopping: 240,
-    phone: 255,
-    other: 298,
-  },
-  {
-    period: "1Y",
-    personal: 950,
-    shopping: 930,
-    phone: 738,
-    other: 490,
-  },
-  {
-    period: "ALL TIME",
-    personal: 25,
-    shopping: 25,
-    phone: 25,
-    other: 25,
-  },
-];
-
-const DoughnutChart = () => {
-  const color = ["#4c49ed", "#4fd18b", "#141197", "#9D9BF4"];
+const DoughnutChart = ({ data, filterState }) => {
 
   useEffect(() => {
     if (data) {
       const container = document.getElementById("donutChart");
       container.replaceChildren();
 
-      const timePeriod = data.find((item) => item.period === "ALL TIME");
+      const timePeriod = data.find((item) => item.period === filterState);
 
       if (!timePeriod) {
         console.error('Data for "ALL TIME" period not found.');
@@ -62,7 +31,7 @@ const DoughnutChart = () => {
           const segmentElement = document.createElement("div");
           segmentElement.classList.add("portion-block");
           segmentElement.style.transform = `rotate(${startAngle}deg)`;
-          segmentElement.style.background = color[index];
+          segmentElement.style.background = getColors(index);
 
           startAngle += (percentage / 100) * 360;
 
@@ -74,7 +43,7 @@ const DoughnutChart = () => {
       centerDiv.innerHTML = `$ ${totalCount}`;
       container.appendChild(centerDiv);
     }
-  }, [data]);
+  }, [data, filterState]);
 
   return (
     <div className="donut-chart-block block">

@@ -43,7 +43,7 @@ const Card = () => {
     <div className="card">
       <p className="card-title">Expenses</p> 
       <Filter filter={filter} currentFilterState={(value) => {setFilterState(value)}}></Filter>
-      <DoughnutChart></DoughnutChart>
+      <DoughnutChart data={data} filterState={filterState}></DoughnutChart>
       <Legend data={data} filterState={filterState}></Legend>
     </div>
   );
