@@ -14,12 +14,12 @@ div.center {
   left: 0;
   bottom: 0;
   right: 0;
-  width: 130px;
-  height: 130px;
+  width: 150px;
+  height: 150px;
   margin: auto;
   border-radius: 50%;
   line-height: 35px;
-  padding: 20% 0 0;
+  padding: 30% 0 0;
 }
 
 .portion-block {
