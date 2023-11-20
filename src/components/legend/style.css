@@ -20,3 +20,11 @@
     color: #938FA3;
     text-transform: capitalize;
 }
+
+
+@media only screen and (max-width: 600px) {
+    .legend-wrapper {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+  }

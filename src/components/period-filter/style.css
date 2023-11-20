@@ -20,3 +20,10 @@
     color: #003EFF;
     border-radius: 16px;
 }
+
+@media only screen and (max-width: 600px) {
+    .filter-wrapper {
+        gap: 8px;
+        align-items: center;
+    }
+  }
