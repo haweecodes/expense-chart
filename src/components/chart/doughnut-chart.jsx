@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
+import commaNumber from 'comma-number';
 import { getColors } from "../../utils";
 import "./style.css";
 
 const DoughnutChart = ({ data, filterState }) => {
-  function generateConicGradient(timePeriod) {
+  const generateConicGradient = (timePeriod) => {
     const numericValues = Object.values(timePeriod).filter(
       (value) => typeof value === "number"
     );
@@ -22,7 +23,7 @@ const DoughnutChart = ({ data, filterState }) => {
       });
 
     return `conic-gradient(${colorStops.join(", ")})`;
-  }
+  };
 
   useEffect(() => {
     if (data) {
@@ -43,7 +44,7 @@ const DoughnutChart = ({ data, filterState }) => {
         numericValues.reduce((acc, value) => acc + value, 0.0)
       ).split(".");
       const decimalCount = splitCount[1] || "00";
-      const totalCount = splitCount[0];
+      const totalCount = commaNumber(splitCount[0]);
       container.style.background = generateConicGradient(timePeriod);
 
       const numberDiv = document.getElementById("number");
